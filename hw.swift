@@ -2,7 +2,7 @@
 //  "Dispatch", or "Glibc"
 class Emp {
 	
-	
+	typealias voidv = () -> ()
 	
 		// The signature (VOID) -> Bool
 	func createEmp()-> Bool {
@@ -33,8 +33,33 @@ class Emp {
 	}
 	
 	
-	func addManager
+	func addManager(){// Simple func that calls a func 			locally
+		print("Manager added running SSN")
+		
+		func addSSN(){
+			print("SSN Added")
+		}
+		
+		addSSN()
+		print("Manager added")
+	}
 	
+	func factorial(_ x:Int) -> Int {// Factorial Formla
+		var temp:Int
+		if(x <= 1){ return 1}
+		temp = x * factorial(x-1)
+		return temp
+		
+	}
+	
+	func doSomething(_ run:voidv){ // Func which will excute the passed func and it is 		using thr typealias
+		run()
+	}
+	
+	
+	func printManagerName(){// A Simple Func for SIM
+		print("Manager is Saleh")
+	}
 
 }
 
@@ -74,7 +99,26 @@ class Emp {
 	/*
 	5) Write a function inside a function.
 	*/
+	a.addManager()
 	
 	
-	
+	/*
+	6) Write a recursive function.
+	*/
+	print(a.factorial(5))
+
+
+	/*
+	7) Write typealias for a function type which has different parameter types.
+	*/
+	/*  DONE ON TOP  */
+
+
+	/*
+	8) Pass function as a value to another function.
+	*/
+	a.doSomething(a.printManagerName)
+
+
+
 
